@@ -1,0 +1,17 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:sl="/org/jenkinsci/plugins/embedgrafanalinks">
+  <f:section title="${%Grafana Sidebar Links}">
+     <f:entry title="${%Add Side Link for Grafana}"
+             description="${%List of Grafana links for Jenkins main pages and view tabs}">
+      <sl:links links="${it.links}"/>
+    </f:entry>
+    
+    <f:entry>
+      <j:set var="url" value="${rootURL}/plugin/embed-grafana-links/startUpload"/>
+      <iframe src="${url}" frameborder="0" style="width:100%;height:4em;margin-top:2em">
+        <a href="${url}" target="_blank">${%Upload image file...}</a>
+      </iframe>
+    </f:entry>
+   
+  </f:section>
+</j:jelly>

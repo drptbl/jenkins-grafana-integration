@@ -1,0 +1,20 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:l="/lib/layout" xmlns:f="/lib/form">
+ 
+  <style type="text/css"> table.grafna_link td { vertical-align:middle; } </style>
+  <f:repeatable var="link" items="${attrs.links}" name="links" add="${%Add Link}">
+   
+    <table class="grafana_link">
+      <f:entry title="${%Grafana Link URL}" help="/plugin/embed-grafana-links/help-url.html">
+        <f:textbox name="urlName" value="${link.urlName}"/>
+      </f:entry> 
+      <f:entry title="${%Grafana Link Text}">
+        <f:textbox name="displayName" value="${link.displayName}"/>
+      </f:entry>
+      <f:entry title="${%Grafana Link Icon}" help="/plugin/embed-grafana-links/help-icon.html">
+        <f:textbox name="iconFileName" value="${link.iconFileName}"/>
+      </f:entry>
+      <f:entry><f:repeatableDeleteButton/></f:entry>
+        </table>
+  </f:repeatable>
+</j:jelly>
